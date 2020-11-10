@@ -4,11 +4,35 @@
 <head>
     <meta charset="utf-8"/>
     <title>Chat Room</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
 </head>
 <body>
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br>
-    <input id="chat-message-input" type="text" size="100"><br>
-    <input id="chat-message-submit" type="button" value="Send">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <div class="form-group shadow-textarea">
+    <div class="card text-white bg-dark mb-3" style="max-width: 68rem;">
+  <div class="card-header">Tin nhắn gửi đi của bạn sẽ được mã hóa</div>
+  <div class="card-body">
+    <h5 class="card-title">Lịch sử chat:</h5>
+    <textarea class="form-control z-depth-1" id="chat-log" rows="8" placeholder=""></textarea>
+    </div>
+    <div class="panel-footer">
+        <div class="input-group">
+            <input id="chat-message-input" type="text" class="form-control input-sm chat_set_height" placeholder="Điền tin nhắn của bạn ở đây..." tabindex="0" dir="ltr" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="on" contenteditable="true" />
+
+            <span class="input-group-btn">
+                <button class="btn bt_bg btn-sm" id="chat-message-submit">
+                    Send</button>
+            </span>
+        </div>
+    </div>
+  </div>
+</div>
+
     {{ room_name|json_script:"room-name" }}
     <script>
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
@@ -46,5 +70,6 @@
             messageInputDom.value = '';
         };
     </script>
+
 </body>
 </html>
