@@ -4,16 +4,56 @@
 <head>
     <meta charset="utf-8"/>
     <title>Chat Room</title>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet"
 </head>
 <body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href=".">Nhóm 6</a>
 
+    <!-- Links -->
+    <ul class="navbar-nav">
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Mã Hóa
+        </a>
+        <div class="dropdown-menu">
+          <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/mahoa">Mã Hóa Cipher</a>
+          <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/mahoarsa">Mã Hóa RSA</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Giải Mã
+        </a>
+        <div class="dropdown-menu">
+          <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/giaima">Giải Mã Cipher</a>
+          <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/giaimarsa">Giải Mã RSA</a>
+        </div>
+      </li>
+    </ul>
+
+  </nav>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <div class="form-group shadow-textarea">
+    <div class="form-group shadow-textarea container">
     <div class="card text-white bg-dark mb-3" style="max-width: 68rem;">
   <div class="card-header">Tin nhắn gửi đi của bạn sẽ được mã hóa</div>
   <div class="card-body">
@@ -31,7 +71,28 @@
         </div>
     </div>
   </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Mã hóa
+    </button>
+    <div class="dropdown-menu">
+      <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/mahoa">Mã hóa Cipher</a>
+      <div class="dropdown-divider"></div>
+      <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/mahoarsa">Mã hóa RSA</a>
+    </div>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Giải mã
+    </button>
+    <div class="dropdown-menu">
+      <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/giaima">Giải mã Cipher</a>
+      <div class="dropdown-divider"></div>
+      <a target="_blank" class="dropdown-item" href="http://127.0.0.1:8000/api/giaimarsa/">Giải mã RSA</a>
+    </div>
+  </div>
 </div>
+
 
     {{ room_name|json_script:"room-name" }}
     <script>
